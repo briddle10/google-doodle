@@ -1,16 +1,197 @@
-/* My Awesome Styles */
-
-/* Diagnostic Styling 
-  * Change Background Color
-  * Outline Elements
-*/
-
-/* * {
-    outline: 1px dotted black;
-} */
-
+/* External styling from: https://codepen.io/manikoth/pen/NNNBYe.css
+ */
+/* Doodle Stage */
 #stage {
-  background: #ccc;
+  position: relative;
+  background: none;
   height: 300px;
   width: 600px;
+}
+
+#rocket{
+  position: absolute;
+  height: 162px;
+  width: 49px;
+  left: 480px;
+  top: 65px;
+  background: url(https://i.imgur.com/ZlXJh44.png);
+  background-position: bottom 0px left 0px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.rocketFirst{
+   animation: rocketFirst 2s steps(14) 6.5s forwards;
+}
+
+.rocketUp{
+  animation: rocketUp 2s steps(14) forwards;
+}
+
+.rocketDown{
+  animation: rocketDown 2.25s steps(19) forwards;
+}
+
+@keyframes rocketFirst{
+  0%{
+    opacity: 0;
+  }
+  40%{
+    opacity: 1;
+    background-position: bottom 0px left 0px;
+  }
+  100%{
+    opacity: 1;
+    background-position: bottom 0px left -680px;
+  }
+}
+
+@keyframes rocketUp{
+  0%{
+    opacity: 1;
+    background-position: bottom 0px left 0px;
+  }
+  100%{
+    opacity: 1;
+    background-position: bottom 0px left -680px;
+  }
+}
+
+@keyframes rocketDown{
+   0%{
+    opacity: 1;
+    background-position: bottom 0px left -680px;
+  }
+  100%{
+    opacity: 1;
+    background-position: bottom 0px left -1617px;
+  }
+}
+
+.planets{
+  position: absolute;
+  height: 160px;
+}
+
+.planetsAppear{
+  animation: 5s appear 4s 1 linear both;
+}
+
+#earth{
+  left: -20px;
+  top: 70px;
+  
+  z-index: 1;
+}
+
+.planetsBounce{
+  animation: bounce 1.5s infinite;
+}
+
+.saturnFlip{
+  animation: flip 1.5s infinite;
+}
+
+#mars{
+  left: 98px;
+  top: 70px;
+  
+  z-index: 1;
+}
+
+#saturn{
+  left: 214px;
+  top: 70px;
+  
+  z-index: 1;
+}
+
+#pluto{
+  left: 335px;
+  top: 70px;
+  
+  z-index: 1;
+}
+
+#moon{
+  left: 477px;
+  top: 70px;
+  
+  z-index: 1;
+}
+
+#google{
+  width: 600px;
+}
+
+.disappear{
+  animation: 5s disappear linear both;
+}
+
+@keyframes disappear{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+@keyframes appear{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.centerWrap{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .25s ease-in, background .5s;
+}
+
+svg{
+  position: absolute;
+  top: 200px;
+  left: 300px;
+  height: 40px;
+  animation: 2s hinge 12s 1 both;
+}
+
+body{
+  position: relative;
+  background: url(https://i.imgur.com/GqTOcPe.png);
+  background-size: cover;
+}
+
+#alien{
+  height: 80px;
+  position: absolute;
+  top: 70px;
+  left: -150px;
+  animation: 4s sliding cubic-bezier(0,.5,1,0) 13s both 1;
+}
+
+@keyframes sliding{
+  0%{
+    transform: translate(0);
+  }
+  99%{
+    transform: translate(2500px);
+  }
+  100%{
+   transform: translate(-2500px);
+  }
+}
+
+button{
+  background: black;
+  color: white;
+  font-size: 14px;
 }
